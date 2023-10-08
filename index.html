@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <link rel="stylesheet" href="{{ url_for('static',filename='templates/index.css') }}">
+    <title>PokéDex</title>
+
+</head>
+
+  <header  class="header" id="myHeader" style="position:sticky; top:0; width:100%;">
+    <form action="/search" method="post">
+      <input autocomplete="off" name="pokemon_search" placeholder="Enter the pokemon name" type="text">
+      <button type="submit">Search</button>
+    </form>
+
+
+    {% block content %}
+    <!-- create if loop to show a card if focus is true, if focus is not true then the right side of screen will be blank -->
+      {% if focus %}
+        <div class="card">
+            <div style="position: absolute;
+              right: 150px; width:50%;">
+              <!-- image will be the img found either by search or clicking the pokemon in the list -->
+                      <img src="{{ img }}" style="width:60%">
+                <br>
+          <!-- make table for the pokemon information -->
+          <table class="poke_table">
+              <thead>
+                  <tr>
+                      <th style="padding: 12px 15px;font-size:30px;color:black">Name:</th>
+                      <th style="padding: 12px 15px;font-size:30px;color:black">Ability</th>
+                      <th style="padding: 12px 15px;font-size:30px;color:black">Type</th>
+                  </tr>
+              </thead>
+              <tbody style="border-bottom: 1px solid #000000;" class="uppercase">
+                  <tr style="border-bottom: 1px solid #000000;">
+                      <td style="font-size:20px;color:black;padding: 12px 15px;">{{ name }}</td>
+                      <td style="font-size:20px;color:black;padding: 12px 15px;">{{ ability }}</td>
+                      <td style="font-size:20px;color:black;padding: 12px 15px;">{{ type }}</td>
+                  </tr>
+              </tbody>
+          </table>
+    {% endif %}
+    {% endblock content %}
+  </header>
+
+<body>
+  <!-- create a for loop for the key value pair within the dictionary of the json content, this will allow for dynamic rendering of page so when searching pokemon the card of the pokemon searched or clicked will show up -->
+  <!-- found how to implement dynamic rendering of pages using jinja at https://stackoverflow.com/questions/6101864/dynamic-use-of-templates-in-jinja2-->
+  {% for key, value in list.items()%}
+    <div class="card" class="uppercase">
+      <div class="container">
+          <a href="http://localhost:5000/card/{{ key }}"><img src="{{ value }}" style="width:100%"></a>
+        <h4><b>{{ key }}</b></h4>
+      </div>
+    </div>
+  {% endfor %}
+</body>
+</html>

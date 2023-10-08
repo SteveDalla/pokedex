@@ -1,0 +1,134 @@
+/* sticky was found using https://developer.mozilla.org/en-US/docs/Web/CSS/position*/
+.uppercase
+{
+    text-transform: capitalize;
+}
+.styled-table 
+{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr 
+{
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td 
+{
+    padding: 12px 15px;
+}
+.styled-table tbody tr 
+{
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) 
+{
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type 
+{
+    border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row 
+{
+    font-weight: bold;
+    color: #009879;
+}
+
+
+.poke_table
+{
+  border-collapse: collapse;margin: 25px 0;font-size: 0.9em;
+            font-family: sans-serif;
+            min-width: 400px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.poke_table thead
+{
+  background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.poke_table tr
+{
+  background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.card 
+{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 20%;
+
+}
+
+#absolute 
+{
+  width: 100px;
+  height: 100px;
+  background-color: #FFD7C2;
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+}
+.container 
+{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  border: 2px dashed rgba(114, 186, 94, 0.35);
+  height: 400px;
+  background: rgba(114, 186, 94, 0.05);
+}
+
+.item 
+{
+  position: sticky;
+}
+
+table 
+{
+  border: 1px solid black;
+}
+
+th 
+{
+  border: 1px solid black;
+}
+
+td 
+{
+  border: 1px solid black;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container 
+{
+  padding: 2px 16px;
+}
+
+/* Style the header */
+.header 
+{
+  padding: 10px 16px;
+  background: #555;
+  color: #f1f1f1;
+}

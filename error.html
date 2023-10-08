@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <link rel="stylesheet" href="{{ url_for('static',filename='templates/index.css') }}">
+    <title>PokéDex</title>
+
+</head>
+
+  <header  class="header" id="myHeader" style="position:sticky; top:0; width:100%;">
+    <form action="/search" method="post">
+      <input autocomplete="off" name="pokemon_search" placeholder="Enter the pokemon name" type="text">
+      <button type="submit">Search</button>
+    </form>
+
+
+<body>
+    <h1 align="center">Error</h1>
+    <h2 align="center">Please Enter a Valid Pokemon Name.</h2>
+</body>
+</html>
